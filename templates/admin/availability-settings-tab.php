@@ -20,7 +20,7 @@ $total_codes  = $total_codes ?? 0;
 $base_url = admin_url( 'admin.php?page=wc-settings&tab=availability' );
 ?>
 
-<div class="pavc-availability-settings">
+<div class="pavc-availability-settings wc-settings-prevent-change-event">
 	<h2><?php echo esc_html( $page_title ); ?></h2>
 	
 	<div class="pavc-admin-toolbar">
@@ -196,7 +196,7 @@ $base_url = admin_url( 'admin.php?page=wc-settings&tab=availability' );
 		</div>
 	</div>
 </div><!-- Add/Edit Code Modal -->
-<div id="pavc-code-modal" class="pavc-modal" style="display: none;">
+<div id="pavc-code-modal" class="pavc-modal wc-settings-prevent-change-event" style="display: none;">
 	<div class="pavc-modal-content">
 		<div class="pavc-modal-header">
 			<h3 id="pavc-modal-title"><?php esc_html_e( 'Add New Code', 'product-availability-checker' ); ?></h3>
@@ -215,9 +215,15 @@ $base_url = admin_url( 'admin.php?page=wc-settings&tab=availability' );
 				<div class="pavc-form-field">
 					<label for="pavc-status-select"><?php esc_html_e( 'Status', 'product-availability-checker' ); ?></label>
 					<select id="pavc-status-select" name="is_available">
-						<option value="1"><?php esc_html_e( 'Available', 'product-availability-checker' ); ?></option>
-						<option value="0"><?php esc_html_e( 'Unavailable', 'product-availability-checker' ); ?></option>
+						<option value="available"><?php esc_html_e( 'Available', 'product-availability-checker' ); ?></option>
+						<option value="unavailable"><?php esc_html_e( 'Unavailable', 'product-availability-checker' ); ?></option>
 					</select>
+				</div>
+
+				<div class="pavc-form-field">
+					<label for="pavc-message-input"><?php esc_html_e( 'Custom Message', 'product-availability-checker' ); ?></label>
+					<textarea id="pavc-message-input" name="message" rows="3" placeholder="<?php esc_attr_e( 'Optional custom message for this code...', 'product-availability-checker' ); ?>"></textarea>
+					<p class="description"><?php esc_html_e( 'Optional message to display for this specific code.', 'product-availability-checker' ); ?></p>
 				</div>
 			</form>
 		</div>

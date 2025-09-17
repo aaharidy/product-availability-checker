@@ -79,10 +79,15 @@ class Availability_Settings_Tab {
 
 		// Get pagination parameters
 		$page     = isset( $_GET['paged'] ) ? max( 1, intval( $_GET['paged'] ) ) : 1;
-		$per_page = isset( $_GET['per_page'] ) ? max( 1, intval( $_GET['per_page'] ) ) : 20;
+		$per_page = isset( $_GET['per_page'] ) ? max( 1, intval( $_GET['per_page'] ) ) : 10;
 
 		// Get codes with pagination
-		$codes_data = $codes_service->get_codes( $page, $per_page );
+		$codes_data = $codes_service->get_codes(
+			array(
+				'page'     => $page,
+				'per_page' => $per_page,
+			)
+		);
 
 		// Prepare template data
 		$template_data = array(
@@ -104,18 +109,20 @@ class Availability_Settings_Tab {
 	 */
 	private function get_localized_strings() {
 		return array(
-			'confirmDelete' => __( 'Are you sure you want to delete this code?', 'product-availability-checker' ),
-			'success'       => __( 'Operation completed successfully.', 'product-availability-checker' ),
-			'error'         => __( 'An error occurred. Please try again.', 'product-availability-checker' ),
-			'addCode'       => __( 'Add Code', 'product-availability-checker' ),
-			'editCode'      => __( 'Edit Code', 'product-availability-checker' ),
-			'deleteCode'    => __( 'Delete', 'product-availability-checker' ),
-			'code'          => __( 'Code', 'product-availability-checker' ),
-			'available'     => __( 'Available', 'product-availability-checker' ),
-			'unavailable'   => __( 'Unavailable', 'product-availability-checker' ),
-			'actions'       => __( 'Actions', 'product-availability-checker' ),
-			'save'          => __( 'Save', 'product-availability-checker' ),
-			'cancel'        => __( 'Cancel', 'product-availability-checker' ),
+			'confirmDelete'   => __( 'Are you sure you want to delete this code?', 'product-availability-checker' ),
+			'success'         => __( 'Operation completed successfully.', 'product-availability-checker' ),
+			'error'           => __( 'An error occurred. Please try again.', 'product-availability-checker' ),
+			'addCode'         => __( 'Add Code', 'product-availability-checker' ),
+			'editCode'        => __( 'Edit', 'product-availability-checker' ),
+			'deleteCode'      => __( 'Delete', 'product-availability-checker' ),
+			'code'            => __( 'Code', 'product-availability-checker' ),
+			'available'       => __( 'Available', 'product-availability-checker' ),
+			'unavailable'     => __( 'Unavailable', 'product-availability-checker' ),
+			'actions'         => __( 'Actions', 'product-availability-checker' ),
+			'save'            => __( 'Save', 'product-availability-checker' ),
+			'cancel'          => __( 'Cancel', 'product-availability-checker' ),
+			'noCodes'         => __( 'No codes found.', 'product-availability-checker' ),
+			'noCustomMessage' => __( 'No custom message set', 'product-availability-checker' ),
 		);
 	}
 }
