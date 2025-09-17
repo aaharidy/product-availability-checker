@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Coding Standards for Product Availability Checker Plugin">
+	<description>Sniffs for WordPress plugins, with minor modifications for Product Availability Checker</description>
+
+	<exclude-pattern>./vendor/*</exclude-pattern>
+
+	<rule ref="PHPCompatibility"/>
+	<config name="testVersion" value="7.2-"/>
+
+	<rule ref="WordPress-Core">
+		<type>warning</type>
+		<exclude name="WordPress.PHP.YodaConditions"/>
+	</rule>
+
+	<rule ref="WordPress-Core"/>
+	<rule ref="WordPress-Docs"/>
+	<rule ref="WordPress.WP.I18n"/>
+	<config name="text_domain" value="product-availability-checker,default"/>
+
+	<!-- These special comments are markers for the build process -->
+	<rule ref="Squiz.Commenting.InlineComment.WrongStyle" />
+
+	<rule ref="WordPress.NamingConventions.ValidVariableName.PropertyNotSnakeCase" />
+	<rule ref="WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase" />
+	<rule ref="WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase" />
+
+	<!-- Ignore filename error since it requires WP core build process change -->
+	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
+		<exclude-pattern>includes/abstracts/*</exclude-pattern>
+	</rule>
+
+	<rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis">
+		<properties>
+			<property name="allowUnusedParametersBeforeUsed" value="true"/>
+		</properties>
+	</rule>
+	<rule ref="Generic.CodeAnalysis.EmptyPHPStatement"/>
+
+	<arg value="ps"/>
+	<arg name="extensions" value="php"/>
+</ruleset>

@@ -1,0 +1,9 @@
+/vendor
+.DS_Store
+*.log
+.vscode
+.circleci
+.zip
+dist
+.vscode
+*.zip
