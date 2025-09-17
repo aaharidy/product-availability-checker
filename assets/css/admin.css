@@ -1,0 +1,269 @@
+.pavc-availability-settings {
+  margin-top: 10px;
+}
+
+.pavc-availability-settings h2 {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.pavc-admin-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px 0;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.pavc-search-box {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pavc-search-box input[type="text"] {
+  width: 250px;
+}
+
+.pavc-codes-table-wrapper {
+  margin-bottom: 20px;
+}
+
+#pavc-codes-table {
+  margin-top: 0;
+}
+
+.column-id {
+  width: 60px;
+  text-align: center;
+}
+
+.column-code {
+  width: 150px;
+}
+
+.column-message {
+  min-width: 200px;
+}
+
+.column-actions {
+  width: 120px;
+  text-align: center;
+}
+
+.pavc-status {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.pavc-status-available {
+  background: #46b450;
+  color: #fff;
+}
+
+.pavc-status-unavailable {
+  background: #dc3232;
+  color: #fff;
+}
+
+.column-actions .button {
+  margin: 0 2px;
+  font-size: 11px;
+  height: auto;
+  line-height: 1.4;
+  padding: 4px 8px;
+}
+
+.pavc-delete-code {
+  color: #dc3232;
+}
+
+.pavc-delete-code:hover {
+  color: #a00;
+}
+
+.pavc-modal {
+  position: fixed;
+  z-index: 160000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pavc-modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 4px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+
+.pavc-modal-header {
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pavc-modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.pavc-modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.pavc-modal-close:hover {
+  background: #f0f0f0;
+  color: #000;
+}
+
+.pavc-modal-body {
+  padding: 20px;
+}
+
+.pavc-form-field {
+  margin-bottom: 15px;
+}
+
+.pavc-form-field:last-child {
+  margin-bottom: 0;
+}
+
+.pavc-form-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.pavc-form-field .required {
+  color: #dc3232;
+}
+
+.pavc-form-field input[type="text"],
+.pavc-form-field select,
+.pavc-form-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pavc-form-field .description {
+  margin-top: 5px;
+  margin-bottom: 0;
+  color: #666;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.pavc-modal-footer {
+  padding: 15px 20px;
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  border-radius: 0 0 4px 4px;
+}
+
+.pavc-pagination-wrapper {
+  margin-top: 10px;
+}
+
+.tablenav {
+  margin-top: 10px;
+}
+
+.pavc-loading-overlay {
+  position: fixed;
+  z-index: 160001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pavc-loading-spinner {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+.pavc-loading-spinner p {
+  margin: 10px 0 0 0;
+  color: #666;
+}
+
+@media screen and (max-width: 782px) {
+  .pavc-admin-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .pavc-search-box {
+    justify-content: center;
+  }
+
+  .pavc-search-box input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .pavc-modal-content {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  .column-actions .button {
+    display: block;
+    margin: 2px 0;
+    width: 100%;
+  }
+}
+
+.pavc-hidden {
+  display: none !important;
+}
+
+.pavc-text-center {
+  text-align: center;
+}
+
+.pavc-mb-10 {
+  margin-bottom: 10px;
+}
+
+.pavc-mt-10 {
+  margin-top: 10px;
+}
+
+.submit {
+  display: none;
+}
