@@ -8,6 +8,7 @@
 namespace PAVC;
 
 use PAVC\Traits\Singleton;
+use PAVC\REST_API\REST_API;
 
 /**
  * Main plugin class.
@@ -27,5 +28,7 @@ class Plugin {
 	 * Initialize the plugin.
 	 */
 	private function init() {
+		// Load rest api class.
+		REST_API::instance();
 	}
 }
