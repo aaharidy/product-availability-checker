@@ -7,3 +7,4 @@
 dist
 .vscode
 *.zip
+/node_modules

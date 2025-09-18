@@ -1,0 +1,16 @@
+{
+  "name": "product-availability-checker",
+  "version": "1.0.0",
+  "main": "src",
+  "scripts": {
+    "build:zip": "node build-zip.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "archiver": "^7.0.1",
+    "fs-extra": "^11.3.1"
+  }
+}

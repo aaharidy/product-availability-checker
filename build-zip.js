@@ -30,6 +30,9 @@ const EXCLUDED_PATTERNS = [
     'composer.lock',
     'phpcs.xml.dist',
     '.phpcs.xml.dist',
+    'package.json',
+    'package-lock.json',
+    'README.md',
 
     // The build script itself
     'build-zip.js',
