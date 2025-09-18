@@ -10,6 +10,7 @@ namespace PAVC;
 use PAVC\Traits\Singleton;
 use PAVC\REST_API\REST_API;
 use PAVC\Admin\Admin_Loader;
+use PAVC\Frontend\Frontend_Loader;
 
 /**
  * Main plugin class.
@@ -36,5 +37,8 @@ class Plugin {
 		if ( is_admin() ) {
 			Admin_Loader::instance();
 		}
+
+		// Load frontend functionality.
+		Frontend_Loader::instance();
 	}
 }

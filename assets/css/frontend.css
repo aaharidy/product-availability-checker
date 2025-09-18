@@ -1,0 +1,340 @@
+/**
+ * Product Availability Checker - Frontend Styles
+ *
+ * CSS for the availability checker widget on product pages
+ */
+
+/* Main container */
+.pavc-availability-checker {
+  background: #f9f9f9;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  font-family: inherit;
+}
+
+.pavc-checker-title {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Form styling */
+.pavc-checker-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pavc-input-group {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+/* Zip code input */
+.pavc-zip-input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+  background: #fff;
+}
+
+.pavc-zip-input:focus {
+  outline: none;
+  border-color: #0073aa;
+  box-shadow: 0 0 0 1px #0073aa;
+}
+
+.pavc-zip-input::placeholder {
+  color: #999;
+}
+
+/* Check button */
+.pavc-check-button {
+  padding: 12px 20px;
+  background: #0073aa;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 140px;
+}
+
+.pavc-check-button:hover:not(:disabled) {
+  background: #005a87;
+  transform: translateY(-1px);
+}
+
+.pavc-check-button:active {
+  transform: translateY(0);
+}
+
+.pavc-check-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading state */
+.pavc-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: #e8f4f8;
+  border: 1px solid #bee5eb;
+  border-radius: 6px;
+  color: #0c5460;
+}
+
+.pavc-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #bee5eb;
+  border-top: 2px solid #0c5460;
+  border-radius: 50%;
+  animation: pavc-spin 1s linear infinite;
+}
+
+@keyframes pavc-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.pavc-loading-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Result display */
+.pavc-result {
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid;
+  animation: pavc-fadeIn 0.3s ease-in;
+}
+
+.pavc-result.pavc-available {
+  background: #e8f5e8;
+  border-color: #c3e6c3;
+  color: #155724;
+}
+
+.pavc-result.pavc-unavailable {
+  background: #f8e8e8;
+  border-color: #e6c3c3;
+  color: #721c24;
+}
+
+.pavc-result-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pavc-result-icon {
+  font-size: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.pavc-result-message {
+  flex: 1;
+}
+
+.pavc-status-text {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.pavc-message-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+/* Error display */
+.pavc-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  color: #721c24;
+  animation: pavc-fadeIn 0.3s ease-in;
+}
+
+.pavc-error-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.pavc-error-message {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes pavc-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cart page availability styling */
+.pavc-cart-notice {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+.pavc-cart-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.pavc-cart-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.pavc-cart-availability.pavc-available {
+  color: #155724;
+}
+
+.pavc-cart-availability.pavc-unavailable {
+  color: #721c24;
+}
+
+.pavc-cart-availability .pavc-icon {
+  font-size: 12px;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .pavc-input-group {
+    flex-direction: column;
+  }
+
+  .pavc-check-button {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .pavc-availability-checker {
+    padding: 15px;
+    margin: 15px 0;
+  }
+
+  .pavc-checker-title {
+    font-size: 16px;
+  }
+
+  .pavc-result-content {
+    gap: 10px;
+  }
+
+  .pavc-result-icon {
+    font-size: 16px;
+  }
+
+  .pavc-status-text {
+    font-size: 15px;
+  }
+}
+
+/* WooCommerce integration */
+.woocommerce .pavc-availability-checker {
+  border-color: #e2e2e2;
+}
+
+.woocommerce .pavc-check-button {
+  background: var(--wc-primary-color, #a46497);
+}
+
+.woocommerce .pavc-check-button:hover:not(:disabled) {
+  background: var(--wc-primary-color-hover, #935585);
+}
+
+/* Disabled add to cart button styling */
+.single_add_to_cart_button.pavc-disabled,
+.add_to_cart_button.pavc-disabled {
+  background-color: #ccc !important;
+  color: #666 !important;
+  cursor: not-allowed !important;
+  opacity: 0.7 !important;
+  border-color: #ccc !important;
+}
+
+.single_add_to_cart_button.pavc-disabled:hover,
+.add_to_cart_button.pavc-disabled:hover {
+  background-color: #ccc !important;
+  color: #666 !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .pavc-availability-checker {
+    border-width: 2px;
+  }
+
+  .pavc-zip-input:focus {
+    border-width: 3px;
+  }
+
+  .pavc-result,
+  .pavc-error,
+  .pavc-loading {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .pavc-check-button,
+  .pavc-zip-input {
+    transition: none;
+  }
+
+  .pavc-spinner {
+    animation: none;
+  }
+
+  .pavc-result,
+  .pavc-error {
+    animation: none;
+  }
+}
